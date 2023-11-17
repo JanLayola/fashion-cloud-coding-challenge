@@ -4,6 +4,8 @@ import * as bodyParser from 'body-parser';
 import DBConnector from './db-connector';
 import Config from './config';
 
+import productRoutes from "./routes/productRoutes";
+
 const app = express();
 
 const connectDatabases = async () => {
@@ -15,6 +17,10 @@ const addBodyParser = () => {
     app.use(bodyParser.json());
 };
 
+const addRoutes = () => {
+    app.use('/product', productRoutes);
+};
+
 const listenPort = (PORT) => {
     app.listen( PORT, () =>
         console.log(`Server running on http://localhost:${PORT}`)
@@ -24,6 +30,7 @@ const listenPort = (PORT) => {
 async function start() {
     await connectDatabases();
     addBodyParser();
+    addRoutes();
     listenPort(Config.SERVICE_PORT);
 };
 
