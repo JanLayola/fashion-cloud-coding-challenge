@@ -7,6 +7,7 @@ import Config from './config';
 import productRoutes from "./routes/productRoutes";
 
 const app = express();
+const cors = require('cors')
 
 const connectDatabases = async () => {
     await DBConnector.connectMongo(Config.MONGO_URL + Config.FASHION_CLOUD_DB);
@@ -21,6 +22,12 @@ const addRoutes = () => {
     app.use('/product', productRoutes);
 };
 
+const allowCorsRequestForLocalhost = () => {
+    app.use(cors({
+        origin: 'http://localhost:4200'
+    }))
+}
+
 const listenPort = (PORT) => {
     app.listen( PORT, () =>
         console.log(`Server running on http://localhost:${PORT}`)
@@ -30,6 +37,7 @@ const listenPort = (PORT) => {
 async function start() {
     await connectDatabases();
     addBodyParser();
+    allowCorsRequestForLocalhost()
     addRoutes();
     listenPort(Config.SERVICE_PORT);
 };
