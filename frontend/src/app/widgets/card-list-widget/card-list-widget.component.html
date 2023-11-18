@@ -1,0 +1,24 @@
+<section id="cardListWidget">
+  <div *ngIf="!itemsAreLoading, else loading">
+      <div *ngIf="items.length; else noItems" class="card-list-container" >
+       <div *ngFor="let item of items">
+        <div class="card-container">
+          <app-card [item]="item"></app-card>
+        </div>
+       </div>
+      </div>
+    <ng-template #noItems>
+      <p class="no-items-message">{{ noItemText }}</p>
+    </ng-template>
+  </div>
+  <ng-template #loading>
+    <p>Loading...</p>
+  </ng-template>
+  <div class="button-container" *ngIf="canShowMoreItems, else showNoMoreItemsMessage">
+    <app-button-widget label="Show more" (onClick)="showMoreItems()"></app-button-widget>
+  </div>
+  <ng-template #showNoMoreItemsMessage>
+    <p *ngIf="items.length">{{ noMoreItemText }}</p>
+  </ng-template>
+</section>
+
