@@ -34,9 +34,9 @@ function _getProducts() {
 }
 
 async function _filterSortAndPaginateResults({ limit, skipIndex, brandName, category, sortBy, sortDirection }): Promise<IProduct[]> {
-    let filter: { brand?: string, category?: string } = {};
+    let filter: { brandName?: string, category?: string } = {};
 
-    if (brandName) filter.brand = brandName;
+    if (brandName) filter.brandName = brandName;
     if (category) filter.category = category;
 
     return await Product.find(filter)
@@ -47,9 +47,9 @@ async function _filterSortAndPaginateResults({ limit, skipIndex, brandName, cate
 }
 
 async function _countTotalItems({brandName, category}): Promise<number> {
-    let filter: { brand?: string, category?: string } = {};
+    let filter: { brandName?: string, category?: string } = {};
 
-    if (brandName) filter.brand = brandName;
+    if (brandName) filter.brandName = brandName;
     if (category) filter.category = category;
 
     return await Product.find(filter).count();
