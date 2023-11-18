@@ -1,0 +1,28 @@
+<section *ngIf="brands" class="filters-container">
+  <app-dropdown-widget
+    label="Filter by brand"
+    [items]="brands"
+    [selectedItem]="selectedBrand"
+    (selectItemEvent)="selectBrandToFilter($event)"
+  ></app-dropdown-widget>
+  <app-dropdown-widget
+    label="Filter by category"
+    [items]="categories"
+    [selectedItem]="selectedCategory"
+    (selectItemEvent)="selectCategoryToFilter($event)"
+  ></app-dropdown-widget>
+  <app-dropdown-widget
+    label="Sort by"
+    [items]="sortItems"
+    [selectedItem]="selectedSortType"
+    (selectItemEvent)="selectSortType($event)"
+  ></app-dropdown-widget>
+</section>
+<app-card-list-widget
+  [items]="items"
+  [canShowMoreItems]="canShowMoreItems"
+  [itemsAreLoading]="isLoading"
+  [noItemText]="getNoItemsText()"
+  [noMoreItemText]="getNoMoreItemsText()"
+  (showMoreDataEvent)="showMore()"
+></app-card-list-widget>
