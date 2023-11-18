@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="img-container">
+    <img [src]="item.image" [alt]="item.title">
+  </div>
+  <div class="info-container">
+    <div>
+      <p class="item-name">{{ item.title }}</p>
+      <p class="item-price">{{ item.subtitle }}</p>
+    </div>
+    <div>
+      <p class="item-stock">Units left: {{ item.rightInfo }}</p>
+    </div>
+  </div>
+</div>
