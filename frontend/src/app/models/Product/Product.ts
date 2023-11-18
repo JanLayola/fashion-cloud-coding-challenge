@@ -1,4 +1,5 @@
 import {Deserializable} from "../Deserializable/Deserializable";
+import {ICardProperties} from "../../components/card/card.component";
 
 export interface IApiProducts {
   gtin: string;
@@ -65,6 +66,15 @@ export default class Product implements Deserializable{
   public getBrandName(): string {
     return this.brandName;
   }
+
+  public convertToItem(): ICardProperties {
+    return {
+      title: this.getName(),
+      subtitle: this.getPrice(),
+      image: this.getImage(),
+      rightInfo: this.getStock().toString()
+    }
+}
 
   deserialize(apiProducts: IApiProducts): this {
     this.id = apiProducts.gtin;
