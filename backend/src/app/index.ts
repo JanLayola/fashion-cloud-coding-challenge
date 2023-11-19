@@ -6,6 +6,7 @@ import Config from './config';
 
 import productRoutes from "./routes/productRoutes";
 import brandRoutes from "./routes/brandRoutes";
+import categoryRoutes from "./routes/categoryRoutes";
 
 const app = express();
 const cors = require('cors')
@@ -22,6 +23,7 @@ const addBodyParser = () => {
 const addRoutes = () => {
     app.use('/product', productRoutes);
     app.use('/brand', brandRoutes);
+    app.use('/category', categoryRoutes);
 };
 
 const allowCorsRequestForLocalhost = () => {
