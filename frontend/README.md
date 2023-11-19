@@ -1,10 +1,19 @@
 # Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
+The Fashion Cloud SRP Frontend is designed to offer a visually appealing and user-friendly interface for retailers to 
+browse, filter, and sort products seamlessly. This section provides an overview of the key features, technologies used,
+and the project's purpose.
 
-## Development server
+## How to run it locally
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```shell
+# Install npm dependencies
+npm install 
+
+# Start the server at http://localhost:4200. 
+# The application will automatically reload if you change any of the source files.
+ng serve 
+```
 
 ## Code scaffolding
 
