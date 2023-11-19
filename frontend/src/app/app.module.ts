@@ -10,6 +10,7 @@ import { CardListWidgetComponent } from './widgets/card-list-widget/card-list-wi
 import CardComponent from "./components/card/card.component";
 import { DropdownWidgetComponent } from './widgets/dropdown-widget/dropdown-widget.component';
 import { FormsModule } from "@angular/forms";
+import { ButtonWidgetComponent } from './widgets/button-widget/button-widget.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { FormsModule } from "@angular/forms";
     CardListWidgetComponent,
     CardComponent,
     DropdownWidgetComponent,
-  ],
+    CardComponent,
+    ButtonWidgetComponent,
+],
   imports: [
     BrowserModule,
     HttpClientModule,
