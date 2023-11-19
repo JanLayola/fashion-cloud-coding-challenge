@@ -5,6 +5,7 @@ import DBConnector from './db-connector';
 import Config from './config';
 
 import productRoutes from "./routes/productRoutes";
+import brandRoutes from "./routes/brandRoutes";
 
 const app = express();
 const cors = require('cors')
@@ -20,6 +21,7 @@ const addBodyParser = () => {
 
 const addRoutes = () => {
     app.use('/product', productRoutes);
+    app.use('/brand', brandRoutes);
 };
 
 const allowCorsRequestForLocalhost = () => {
