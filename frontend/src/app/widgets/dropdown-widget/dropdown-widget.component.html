@@ -1,0 +1,5 @@
+<select [(ngModel)]="selectedItem" (ngModelChange)="selectItem(selectedItem)" id="dropdownWidget">
+  <option value="" disabled>{{ label }}</option>
+  <option *ngFor="let brand of items" [value]="brand">{{ brand.charAt(0).toUpperCase() + brand.slice(1) }}</option>
+  <option value="clear">Clear</option>
+</select>
