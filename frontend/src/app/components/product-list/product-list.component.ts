@@ -45,6 +45,14 @@ export class ProductListComponent implements OnInit {
     this._showMoreProducts();
   }
 
+  protected resetFilters (): void {
+    this.selectedBrand = '';
+    this.selectedCategory = '';
+    this.selectedSortType = '';
+
+    this._showInitialProducts();
+  }
+
   protected selectBrandToFilter(brand: string) {
     this.selectedBrand = this._getNewSelectedItem(brand);
     this._showInitialProducts();

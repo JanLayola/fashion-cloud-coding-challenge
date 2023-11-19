@@ -19,7 +19,7 @@ describe('My First Test', () => {
 
     cy.get('.card-list-container').find('.card').should('have.length', 12)
 
-    cy.get('button').click()
+    cy.contains('Show more').click()
     cy.wait('@getMoreProducts')
 
     cy.get('.card-list-container').find('.card').should('have.length', 24)

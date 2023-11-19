@@ -17,6 +17,10 @@
     [selectedItem]="selectedSortType"
     (selectItemEvent)="selectSortType($event)"
   ></app-dropdown-widget>
+  <app-button-widget
+    label="Reset filters"
+    (onClick)="resetFilters()"
+  ></app-button-widget>
 </section>
 <app-card-list-widget
   [items]="items"
